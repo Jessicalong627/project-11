@@ -1,11 +1,10 @@
 import React from 'react';
-//Image url
-const Image = props => {
-  return (
+
+const Image = props => (
   <li>
     <img src={props.url} alt="" />
   </li>
-)
-}
+);
 
 export default Image;
+//sets image url

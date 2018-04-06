@@ -1,5 +1,6 @@
 import React from 'react';
-// component for if an invalid path is entered
+
+//Used if url is invalid
 const PathNotFound = () => (
   <div className="not-found">
   <h1>404 Error</h1>

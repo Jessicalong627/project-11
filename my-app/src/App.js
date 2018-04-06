@@ -3,28 +3,41 @@ import {
   BrowserRouter,
   Route,
   Redirect,
-  Switch
+Switch
 } from 'react-router-dom';
 
-// App components
-
+// App comp
  import Container from  './Container';
- import PathNotFound from  './PathNotFound';
+ import PathNotFound from './PathNotFound';
 
 
-// Main app layout
+
 class App extends Component {
+
+    constructor() {
+      super();
+      this.state = {
+        loading: true,
+        query: ``
+      };
+    }
+
+  changeValue (text) { this.setState({query : text}); }
+
+//main app 
   render(){
     return (
     <BrowserRouter>
-        <Switch>
-         <Route exact path="/" render={ () => <Container /> } />
-         <Route exact path="/Nature" render={() => <Container /> } />
-         <Route exact path="/NewYork" render={() => <Container /> } />
-         <Route exact path="/Sunset" render={() => <Container /> } />
-          <Route exact path="/Search" render={() => <Container /> } />
-         <Route component={PathNotFound}/>
-         </Switch>
+           <div className="container">
+         <Switch>
+         <Route exact path='/' render={ () => <Redirect to={`/Nature`}/>}/>
+         <Route  path='/search' render={ () => <Container changeValue={this.changeValue.bind(this)} value={this.state} />}/>
+         <Route  path='/Nature' render={ () => <Container value='Nature'/>}/>
+        <Route  path='/NewYork' render={ () => <Container  value="NewYork"/>}/>
+        <Route  path='/Sunset' render={ () => <Container   value="Sunset" />}/>
+        <Route component={PathNotFound} />
+          </Switch>
+         </div>
   </BrowserRouter>
       );
     }

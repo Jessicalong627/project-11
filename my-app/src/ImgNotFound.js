@@ -1,5 +1,5 @@
 import React from 'react';
-// component for if an image cant be found
+// Using this for the images that cant be found
 const ImgNotFound = () => (
   <div className="img-not-found">
   <ul>
