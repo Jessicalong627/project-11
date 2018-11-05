@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "engines": {
+    "engines": {
   "npm": "6.4.1",
   "node": "10.5.0"
 },
